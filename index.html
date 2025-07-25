@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lokesh Kumar | Portfolio Coming Soon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Lokesh Kumar</h1>
+      <p class="tagline">My Portfolio is Coming Soon</p>
+      <p class="description">I’m working on something amazing. Stay tuned for the big reveal!</p>
+
+      <h2 class="typing-text"><span id="typing"></span><span class="cursor">|</span></h2>
+
+      <footer>
+        &copy; 2025 | Lokesh Kumar | Contact: lokesh@example.com
+      </footer>
+    </div>
+  </div>
+
+  <!-- JavaScript Typing Effect -->
+  <script>
+    const words = ["Web Developer", "Web Designer"];
+    let i = 0;
+    let j = 0;
+    let currentWord = "";
+    let isDeleting = false;
+    const typingElement = document.getElementById("typing");
+
+    function type() {
+      currentWord = words[i];
+
+      if (isDeleting) {
+        typingElement.textContent = currentWord.substring(0, j--);
+      } else {
+        typingElement.textContent = currentWord.substring(0, j++);
+      }
+
+      if (!isDeleting && j === currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % words.length;
+      }
+
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+
+    type();
+  </script>
+</body>
+</html>
