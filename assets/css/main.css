@@ -52,6 +52,44 @@
   --contrast-color: #003366;
 }
 
+/* Scroll to top button (already present) */
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  background: #f26522;
+  color: white;
+  border-radius: 50%;
+  z-index: 998;
+}
+
+/* Social icons container */
+.social-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 80px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+/* Social icon style */
+.social-icons img {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+/* Hover effect */
+.social-icons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
